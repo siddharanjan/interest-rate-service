@@ -3,36 +3,21 @@ package com.ing.customer.interestrate.restservice.repository;
 import com.ing.customer.interestrate.restservice.entity.InterestRate;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.ActiveProfiles;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DataJpaTest
-@ActiveProfiles("test")
-public class InterestRateRepositoryTest {
-
-    @Autowired
-    private TestEntityManager entityManager;
+@SpringBootTest
+class InterestRateRepositoryTest {
 
     @Autowired
     private InterestRateRepository interestRateRepository;
 
     @Test
-    public void findByCreditScore_ReturnsInterestRate() {
-        // Arrange
-        String creditScore = "750";
-        InterestRate expectedRate = new InterestRate();
-        expectedRate.setCreditScore(creditScore);
-        expectedRate.setInterestRate(5.0);
-        entityManager.persist(expectedRate);
-        entityManager.flush();
-
-        // Act
-        InterestRate actualRate = interestRateRepository.findByCreditScore(creditScore);
-
-        // Assert
-        assertEquals(expectedRate, actualRate);
+    void findByCreditScore() {
+        InterestRate interestRate = interestRateRepository.findByCreditScore("750");
+        assertEquals("700", interestRate.getCreditScore_min());
+        assertEquals("799", interestRate.getCreditScore_max());
+        assertEquals(3.5, interestRate.getInterestRate());
     }
 }
