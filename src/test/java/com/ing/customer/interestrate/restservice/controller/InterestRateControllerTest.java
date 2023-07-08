@@ -35,7 +35,7 @@ class InterestRateControllerTest {
         when(interestRateService.getInterestRates(creditScore)).thenReturn(interestRateDTO);
 
         // Act
-        ResponseEntity<InterestRateDTO> response = interestRateController.getBestInterestRate(creditScore);
+        ResponseEntity<InterestRateDTO> response = interestRateController.getInterestRate(creditScore);
 
         // Assert
         assertEquals(HttpStatus.OK, response.getStatusCode());

@@ -9,15 +9,17 @@ public class InterestRate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "credit_score")
-    private String creditScore;
+    @Column(name = "credit_score_min")
+    private String creditScore_min;
+
+    @Column(name = "credit_score_max")
+    private String creditScore_max;
 
     @Column(name = "interest_rate")
     private double interestRate;
 
     public InterestRate() {
     }
-
 
     public Long getId() {
         return id;
@@ -27,12 +29,20 @@ public class InterestRate {
         this.id = id;
     }
 
-    public String getCreditScore() {
-        return creditScore;
+    public String getCreditScore_min() {
+        return creditScore_min;
     }
 
-    public void setCreditScore(String creditScore) {
-        this.creditScore = creditScore;
+    public void setCreditScore_min(String creditScore_min) {
+        this.creditScore_min = creditScore_min;
+    }
+
+    public String getCreditScore_max() {
+        return creditScore_max;
+    }
+
+    public void setCreditScore_max(String creditScore_max) {
+        this.creditScore_max = creditScore_max;
     }
 
     public double getInterestRate() {
@@ -43,9 +53,10 @@ public class InterestRate {
         this.interestRate = interestRate;
     }
 
-    public InterestRate(Long id, String creditScore, double interestRate) {
+    public InterestRate(Long id, String creditScore_min, String creditScore_max, double interestRate) {
         this.id = id;
-        this.creditScore = creditScore;
+        this.creditScore_min = creditScore_min;
+        this.creditScore_max = creditScore_max;
         this.interestRate = interestRate;
     }
 
@@ -53,7 +64,8 @@ public class InterestRate {
     public String toString() {
         return "InterestRate{" +
                 "id=" + id +
-                ", creditScore='" + creditScore + '\'' +
+                ", creditScore_min='" + creditScore_min + '\'' +
+                ", creditScore_max='" + creditScore_max + '\'' +
                 ", interestRate=" + interestRate +
                 '}';
     }

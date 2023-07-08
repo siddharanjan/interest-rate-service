@@ -17,7 +17,4 @@ public class InterestRateService {
         InterestRateDTO interestRateDTO = new InterestRateDTO(creditScore, interestRate.getInterestRate());
         return interestRateDTO;
     }
-
-
-
 }
