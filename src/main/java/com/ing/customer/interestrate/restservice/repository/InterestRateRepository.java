@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * The InterestRateRepository class is a repository that provides access to the interest rate
+ * The InterestRateRepository class is a repository class that provides access to the interest rate
  * data in the database.
  *
  * @author Sid

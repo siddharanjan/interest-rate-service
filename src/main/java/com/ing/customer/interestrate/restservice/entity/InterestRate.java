@@ -2,6 +2,12 @@ package com.ing.customer.interestrate.restservice.entity;
 
 import jakarta.persistence.*;
 
+/**
+ * The InterestRate class is an entity class that is used to store interest rate details in the database
+ *
+ *
+ * @author Sid
+ */
 @Entity(name = "interest_rate")
 public class InterestRate {
 
