@@ -1,5 +1,11 @@
 package com.ing.customer.interestrate.restservice.dto;
 
+/**
+ * The InterestRateDTO class is a bean class that is used to store and transfer interest rate details
+ *
+ *
+ * @author Sid
+ */
 public class InterestRateDTO {
 
     private String creditScore;
@@ -24,5 +30,8 @@ public class InterestRateDTO {
     public InterestRateDTO(String creditScore, double interestRate) {
         this.creditScore = creditScore;
         this.interestRate = interestRate;
+    }
+
+    public InterestRateDTO() {
     }
 }

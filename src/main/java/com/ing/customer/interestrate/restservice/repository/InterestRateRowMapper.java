@@ -6,8 +6,21 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * A `RowMapper` class that maps a row from a `ResultSet` object to an `InterestRate` object.
+ *
+ * @author Sid
+ */
 public class InterestRateRowMapper implements RowMapper<InterestRate> {
 
+    /**
+     * Maps a row from a `ResultSet` object to an `InterestRate` object.
+     *
+     * @param rs The `ResultSet` object to map.
+     * @param rowNum The row number of the `ResultSet` object.
+     * @return The `InterestRate` object that was mapped.
+     * @throws SQLException If an error occurs while mapping the row.
+     */
     @Override
     public InterestRate mapRow(ResultSet rs, int rowNum) throws SQLException {
         InterestRate interestRate = new InterestRate();
